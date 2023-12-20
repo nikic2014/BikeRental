@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточка точки на карте</title>
+</head>
+<body>
+
+<p th:text="${placeMark.getTitle()}">Какое-то название велопроката</p>
+<p th:text="${placeMark.getAddress()}">Чернышевского улица, 88к/1</p>
+<p th:text="${placeMark.getTag()}">Велопрокат</p>
+<p th:text="${placeMark.getDescription()}">Какое-то описание велопроката</p>
+
+<a th:href="@{/admin/{id}/edit(id=${placeMark.getId()})}">Изменить</a>
+
+<form th:method="DELETE"
+      th:action="@{/admin/{id}(id=${placeMark.getId()})}">
+    <input type="submit" value="Удалить"/>
+</form>
+
+<div th:each="image : ${listImage}">
+    <img
+            th:attr =
+            "src=@{${image.getSrc()}}"
+            width="200" height="200"
+    />
+    <button th:onclick="'removeImage(\'' + ${image.getId()} + '\');'">✕</button>
+</div>
+
+
+</body>
+<script src="/adminStatic/CrudPhoto.js"></script>
+</html>

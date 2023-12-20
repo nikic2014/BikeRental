@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование метки</title>
+    <link rel="stylesheet" href="/adminStatic/form.css">
+</head>
+<body>
+
+<main>
+    <form th:method="PATCH" th:action="@{/admin/{id}(id=${placeMark.getId()})}"
+          th:object="${placeMark}">
+        <label for="title"> Ввидите название точки: </label>
+        <input type="text" th:field="*{title}" id="title"/>
+        <br/>
+        <label for="address"> Введите адресс: </label>
+        <input type="text" th:field="*{address}" id="address"/>
+        <br/>
+        <label for="tag"> Введите тег: </label>
+        <select type="text" th:field="*{tag}" id="tag">
+            <option th:value="BikeRental">Велопрокат</option>
+            <option th:value="BikeParking">Велопарковка</option>
+            <option th:value="BikeRepairs">Ремонт велосипедов</option>
+            <option th:value="BikeShop">Веломагазин</option>
+            <option th:value="DangerousArea">Опасный участок</option>
+            <option th:value="ChillZone">Место отдыха</option>
+            <option th:value="SportSection">Спортивный кружок</option>
+        </select>
+        <br/>
+        <label for="description"> Добавьте описание: </label>
+        <br/>
+        <input type="text" th:field="*{description}" id="description"/>
+        <br/>
+        <input type="submit" value="Update!"/>
+    </form>
+
+    <div class="addImage">
+        <input type="text" id="inputImage"/>
+        <button onclick="addImage()">Добавить фото</button>
+    </div>
+
+</main>
+</body>
+<script src="/adminStatic/CrudPhoto.js"></script>
+</html>

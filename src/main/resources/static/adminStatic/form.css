@@ -1,0 +1,15 @@
+#description {
+    height: 100px;
+    width: 50%;
+}
+
+input, #tag, label {
+    margin-top:15px;
+}
+#tag{
+    margin-bottom:15px;
+}
+
+main {
+    text-align: center;
+}

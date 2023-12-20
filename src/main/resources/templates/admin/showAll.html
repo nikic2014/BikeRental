@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Все точки</title>
+</head>
+<body>
+<div th:each="placeMark : ${listPlaceMarks}">
+    <a th:href="@{/admin/show/{id}(id=${placeMark.getId()})}"
+       th:text="${placeMark.getTitle() + ', ' + placeMark.getAddress() +
+       ', ' + placeMark.getTag()}">
+        placeMarks</a>
+</div>
+</body>
+</html>

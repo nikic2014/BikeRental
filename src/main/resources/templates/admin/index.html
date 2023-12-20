@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню администратора</title>
+    <link rel="stylesheet" href="/adminStatic/admin.css">
+</head>
+<body>
+<main>
+    <h1>Добро пожаловать в панель админа</h1>
+
+    <a href="/admin/new">Добавить новую точку на карту</a>
+
+    <label for="search_by_id">Введите id точки:</label>
+    <input type="search" id="search_by_id"/>
+
+    <button onclick="search()">Найти</button>
+
+    <a href="/admin/statistics"> Статистика </a>
+</main>
+
+<script src="/adminStatic/search.js"></script>
+</body>
+</html>
